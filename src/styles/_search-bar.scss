@@ -1,0 +1,37 @@
+.search-bar {
+  position: relative;
+  &__input {
+    @include flex(row, center, center);
+    .MuiTextField-root {
+      margin-right: -40px;
+    }
+    .current-location {
+      cursor: pointer;
+    }
+    .loading {
+      width: 45px;
+    }
+  }
+  &__data {
+    background-color: white;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem;
+    @include flex(column, flex-start, flex-start);
+    margin-top: 4rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    .location {
+      width: 100%;
+      display: block;
+      cursor: pointer;
+      padding: 0.4rem;
+      border-radius: 0.4rem;
+      &:hover {
+        background-color: gray;
+      }
+    }
+  }
+}

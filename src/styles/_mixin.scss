@@ -1,0 +1,63 @@
+@mixin flex(
+  $flex-direction: row,
+  $justify-content: center,
+  $align-items: center
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+@mixin breakpoint($view) {
+  @if ($view == small-phone) {
+    @media (max-width: 25em) {
+      @content; // 400px
+    }
+  }
+
+  @if ($view == phone) {
+    @media (min-width: 25rem) and (max-width: 37.5em) {
+      @content; // 400px - 600px
+    }
+  }
+
+  @if ($view == tab-port) {
+    @media (min-width: 37.5em) {
+      @content; // 600px
+    }
+  }
+
+  @if ($view == tab-land) {
+    @media (min-width: 56.25em) {
+      @content; // 900px
+    }
+  }
+
+  @if ($view == desktop) {
+    @media (min-width: 75em) {
+      @content; // 1200px
+    }
+  }
+
+  @if ($view == desktop-large) {
+    @media (min-width: 112.5em) {
+      @content; // 1800px
+    }
+  }
+}
+@mixin desktop-content() {
+  margin: 0 auto;
+  padding: 1.6rem;
+
+  @include breakpoint(tab-port) {
+    max-width: 60rem;
+  }
+
+  @include breakpoint(tab-land) {
+    max-width: 70rem;
+  }
+
+  @include breakpoint(desktop) {
+    max-width: 80rem;
+  }
+}

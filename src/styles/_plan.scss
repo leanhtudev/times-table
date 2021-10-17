@@ -1,0 +1,28 @@
+.plan {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  margin: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 4px;
+  &-summary {
+    .time {
+      @include flex(row, space-between, center);
+      margin-bottom: 0.8rem;
+      &-period {
+        @include flex(row, flex-start, center);
+      }
+      font-weight: bold;
+    }
+    .routes {
+      @include flex(row, flex-start, center);
+      .route-summary {
+        &__duration {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+
+  &-content {
+    margin: 1.2rem;
+  }
+}

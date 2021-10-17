@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+// MaterialUI Icons
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import './mixin';
+@import './plan';
+@import './route';
+@import './search-bar';
+.app {
+  padding: 2rem 0;
+  @include desktop-content();
+  &-header {
+    text-align: center;
+  }
+  &-search {
+    margin: 2rem 0;
+    .search-bar {
+      margin: 1.2rem;
+      .MuiTextField-root {
+        width: 100%;
+      }
+    }
+  }
+}

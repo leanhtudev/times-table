@@ -1,0 +1,4 @@
+.route {
+  @include flex(row, flex-start, center);
+  margin-bottom: 0.8rem;
+}
